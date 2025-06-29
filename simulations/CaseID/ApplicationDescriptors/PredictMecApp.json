@@ -1,0 +1,24 @@
+{
+"appDid" : "PREDICTMECAPP",
+"appName" : "PredictMecApp",
+"appProvider" : "simu5g.apps.mec.MecApps.PredictMecApp",
+"appInfoName" : "appInfoName_",
+"appDescription" : "appDescription_",
+"virtualComputeDescriptor" :{
+    "virtualDisk": 10,
+    "virtualCpu" : 1500,
+    "virtualMemory":10
+    },
+    
+    "appServiceRequired": [
+    {
+        "ServiceDependency" :{
+            "serName" : "LocationService",
+            "version" : "v2",
+            "serCategory": "Location"
+        }
+    }
+],
+    
+ "omnetppServiceRequired": "MEWarningAlertService"
+}

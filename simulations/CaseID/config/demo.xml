@@ -1,0 +1,14 @@
+<!-- <config>    -->
+<!--     <interface hosts="*" names="wlan" address="10.x.x.x" netmask="255.255.0.0"/>  -->
+        
+<!--     Assign 192.168.x.x addresses to all other interfaces -->
+<!--     <interface hosts="**" address="192.168.0.x" netmask="255.255.255.0"/> -->
+
+<!-- </config> -->
+<config>
+    <interface hosts="gNodeB*" names="cellular" address="10.x.x.x" netmask="255.0.0.0" delay="10ms + truncnormal(100ms, 10ms)" datarate="uniform(100Mbps, 250Mbps)" drop="uniform(0,1) &lt; 0.01" />
+    <interface hosts="ue*" names="cellular" address="10.x.x.x" netmask="255.0.0.0" delay="10ms + truncnormal(100ms, 10ms)" datarate="uniform(100Mbps, 250Mbps)" drop="uniform(0,1) &lt; 0.01" />
+    
+    <!-- Assign 192.168.x.x addresses to all other interfaces -->
+    <interface hosts="**" address="192.168.x.x" netmask="255.255.255.0" delay="10ms + truncnormal(100ms, 10ms)" datarate="uniform(100Mbps, 250Mbps)" drop="uniform(0,1) &lt; 0.01" />
+</config>
